@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import Link from "next/link";
+import Weather from "@/components/Weather";
 import {
 	MapPin,
 	Navigation,
@@ -134,6 +135,9 @@ export default function HomePage() {
 						</div>
 					</CardContent>
 				</Card>
+
+				{/* Weather Forecast Section */}
+				<Weather />
 
 				{/* Features Section */}
 				<section className="my-16">
