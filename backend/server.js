@@ -9,6 +9,7 @@ import mongoose from "mongoose";
 import connectDB from "./config/connectDB.js";
 import sosRoutes from "./routes/sosRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import viewRouter from "./routes/ViewRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -26,6 +27,8 @@ app.use("/api/sos", sosRoutes);
 // Add this line with other route uses
 app.use("/api/users", userRoutes);
 
+//VR Routes
+app.use("/api/view", viewRouter);
 // Basic route for testing
 app.get("/", (req, res) => {
 	res.send("Smart Navigation Backend is running");

@@ -1,18 +1,16 @@
-import express from "express";
-const viewRouter = express.Router();
-const accessToken = "jcuebpwoxocrnegndhqtlbulvhqjgqaooxfr";
-// Generate dynamic RealView Widget Embed URL
-viewRouter.post("/realview", (req, res) => {
-	const { lat, lng } = req.body;
-	const embedUrl = createRealViewEmbed({ lat, lng, accessToken });
-	res.json({ embedUrl });
-});
+// routes/mapplsRoutes.js
+import { Router } from "express";
+import {
+	getRealViewEmbed,
+	getMetaverseEmbed,
+} from "../controllers/3dpanaromicview.controller.js";
 
-// Generate dynamic 3D Metaverse Widget Embed URL
-viewRouter.post("/metaverse", (req, res) => {
-	const { venueId } = req.body;
-	const embedUrl = createMetaverseEmbed({ venueId, accessToken });
-	res.json({ embedUrl });
-});
+const router = Router();
 
-export default viewRouter;
+// GET /api/realview?lat=..&lng=..
+router.post("/realview", getRealViewEmbed);
+
+// GET /api/metaverse?venueId=..
+router.post("/metaverse", getMetaverseEmbed);
+
+export default router;
