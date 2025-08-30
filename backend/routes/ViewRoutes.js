@@ -1,6 +1,6 @@
 import express from "express";
 const viewRouter = express.Router();
-
+const accessToken = "jcuebpwoxocrnegndhqtlbulvhqjgqaooxfr";
 // Generate dynamic RealView Widget Embed URL
 viewRouter.post("/realview", (req, res) => {
 	const { lat, lng } = req.body;

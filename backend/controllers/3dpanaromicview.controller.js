@@ -1,4 +1,3 @@
-const accessToken = "YOUR_ACCESS_TOKEN";
 // Helper: Generate dynamic RealView Widget Embed URL
 function createRealViewEmbed({ lat, lng, accessToken }) {
 	return `https://realview.mappls.com/realview_widget/${lat},${lng}?access_token=${accessToken}&minDistance=1&maxDistance=500&arrow=true&map=true&zoomControls=true&controls=true&mapWidth=500&mapHeight=400`;
